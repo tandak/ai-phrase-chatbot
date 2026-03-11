@@ -29,9 +29,14 @@ Return generated response
 
 This mirrors how many real AI systems work. Instead of relying entirely on the LLM, the system first checks known information.
 
+
+### setup
+```
+npm install 
+```
 ## First step:
 #### Run the existing Chatbot
 Run the chatbot and pass an input message:
 ```
-npx tsx chatbot.ts "Tanda"
+npx tsx src/chatbot.ts Tanda
 ```
