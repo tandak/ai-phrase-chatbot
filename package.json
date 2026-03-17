@@ -2,7 +2,7 @@
   "name": "ai-phrase-chatbot",
   "version": "1.0.0",
   "description": "This project shows how to run a **local Large Language Model (LLM)** and build a simple chatbot using **Node.js and Ollama**.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
@@ -11,6 +11,10 @@
   "keywords": [],
   "author": "@tandak",
   "devDependencies": {
-    "@types/node": "^25.4.0"
+    "@types/node": "^25.4.0",
+    "tsx": "^4.7.0"
+  },
+  "dependencies": {
+    "ollama": "^0.5.0"
   }
 }
