@@ -68,7 +68,7 @@ mkdir src
 
 Let's start with the simplest chatbot - it just echoes what you say.
 
-Create `src/index.ts`:
+Update `src/index.ts`:
 
 ```typescript
 const input = process.argv.slice(2).join(" ");
@@ -88,44 +88,9 @@ You said: hello world
 
 ---
 
-## Step 2: Add RAG Responses
+## Step 2: Use RAG Responses
 
 RAG (Retrieval-Augmented Generation) means checking a list of known responses first.
-
-Create `src/rag/responses.ts`:
-
-```typescript
-export const responses = [
-  {
-    keywords: ["hello", "hi", "hey"],
-    response: "Hello! How can I help you today?"
-  },
-  {
-    keywords: ["how are you"],
-    response: "I'm doing great! Thanks for asking."
-  },
-  {
-    keywords: ["bye", "goodbye"],
-    response: "Goodbye! Come back soon!"
-  },
-  {
-    keywords: ["help"],
-    response: "I can answer questions, tell time, do math, or check weather. Just ask!"
-  }
-];
-
-export function findResponse(input: string): string | null {
-  const lower = input.toLowerCase();
-  for (const entry of responses) {
-    for (const keyword of entry.keywords) {
-      if (lower.includes(keyword)) {
-        return entry.response;
-      }
-    }
-  }
-  return null;
-}
-```
 
 Update `src/index.ts`:
 
@@ -156,6 +121,12 @@ npx tsx src/index.ts "what is AI"
 Bot: Hello! How can I help you today?
 Bot: I'm doing great! Thanks for asking.
 Bot: I don't understand. (No RAG match)
+```
+
+Also try 😉
+```bash
+npx tsx src/index.ts tanda
+npx tsx src/index.ts selfridges
 ```
 
 ---
